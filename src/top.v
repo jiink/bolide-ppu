@@ -38,6 +38,6 @@ module top(
   reg [7:0] r, g, b;
   reg [9:0] spritePos;
   sprite_controls sprite_controls(.btn(btn1), .pos(spritePos));
-  pattern display_pattern(.clock(hdmi_clk), .spritePos(spritePos), .x(x), .y(y), .r(r), .g(g), .b(b));
+  pattern display_pattern(.clock(hdmi_clk), .spritePosX(spritePos), .spritePosY(300), .x(x), .y(y), .r(r), .g(g), .b(b));
   hdmi hdmi_out(.reset(~hdmi_clk_lock), .hdmi_clk(hdmi_clk), .hdmi_clk_5x(hdmi_clk_5x), .hve(hve), .rgb({8'(r), 8'(g), 8'(b)}), .hdmi_tx_n(hdmi_tx_n), .hdmi_tx_p(hdmi_tx_p));
 endmodule
