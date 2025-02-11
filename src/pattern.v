@@ -14,14 +14,14 @@ localparam [7:0] SPRITE_WIDTH = 8; // = sprite height
 // sprite bitmap
 reg [0:7] bitmap [8]; // Or should it be [7:0]?
 initial begin
-    bitmap[0]  = 8'b1111_1100;
-    bitmap[1]  = 8'b1100_0000;
-    bitmap[2]  = 8'b1100_0000;
-    bitmap[3]  = 8'b1111_1000;
-    bitmap[4]  = 8'b1100_0000;
-    bitmap[5]  = 8'b1100_0000;
-    bitmap[6]  = 8'b1100_0011;
-    bitmap[7]  = 8'b0000_0011;
+    bitmap[0]  = 8'b01111110;
+    bitmap[1]  = 8'b11111111;
+    bitmap[2]  = 8'b11011011;
+    bitmap[3]  = 8'b11011011;
+    bitmap[4]  = 8'b11111111;
+    bitmap[5]  = 8'b11111101;
+    bitmap[6]  = 8'b11100011;
+    bitmap[7]  = 8'b01111110;
 end
 reg [9:0]liveSpritePosX; // register that spritePosX and Y are saved to
 reg [9:0]liveSpritePosY;

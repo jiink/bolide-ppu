@@ -1,15 +1,26 @@
 module sprite_controls
 (
-    input btn,
-    output reg [9:0] pos
+    input btnX,
+    input btnY,
+    output reg [9:0] posX,
+    output reg [9:0] posY
 );
-assign move_btn = ~btn;
+assign move_btnX = ~btnX;
+assign move_btnY = ~btnY;
 
-always @(posedge move_btn) begin
-    if (~&pos) begin 
-        pos <= pos + 100;
+always @(posedge move_btnX) begin
+    if (~&posX) begin 
+        posX <= posX + 10;
     end else begin
-        pos <= 0;
+        posX <= 0;
+    end
+end
+
+always @(posedge move_btnY) begin
+    if (~&posY) begin 
+        posY <= posY + 10;
+    end else begin
+        posY <= 0;
     end
 end
 
